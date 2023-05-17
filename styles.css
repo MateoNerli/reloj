@@ -1,0 +1,243 @@
+:root {
+  --primary-color: #000;
+  --background-color: #5d72a1;
+  --numbers-color: #0037ff;
+  --clock-border-color: #000000;
+  --clock-background-color: #fff;
+}
+
+body {
+  background-color: var(--background-color);
+  padding: 0;
+  margin: 0;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--clock-background-color);
+  margin: 100px auto 0px auto;
+  position: relative;
+  border: 20px solid var(--clock-border-color);
+}
+.center {
+  background-color: var(--primary-color);
+  position: absolute;
+  left: calc(50% - 10px);
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 20;
+}
+.hour {
+  width: 10px;
+  height: 75px;
+  background-color: var(--primary-color);
+  transform-origin: bottom center;
+  border-radius: 4px;
+  position: absolute;
+  top: 75px;
+  left: 145px;
+  z-index: 10;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  transform: rotate(360deg);
+}
+.minute {
+  width: 5px;
+  height: 120px;
+  background-color: var(--primary-color);
+  transform-origin: bottom center;
+  border-radius: 4px;
+  position: absolute;
+  top: 30px;
+  left: 147px;
+  z-index: 9;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  transform: rotate(90deg);
+}
+.second {
+  width: 2px;
+  height: 120px;
+  background-color: red;
+  transform-origin: bottom center;
+  border-radius: 4px;
+  position: absolute;
+  top: 30px;
+  left: 149px;
+  transition: all 0.06s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  z-index: 8;
+  transform: rotate(360deg);
+}
+.time {
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  border: 1px solid var(--clock-border-color);
+  background-color: var(--clock-background-color);
+  padding: 5px;
+  display: block;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  min-width: 70px;
+  height: 15px;
+  color: var(--primary-color);
+}
+.fecha{
+  position: absolute;
+  top: 55%;
+  left: 10%;
+}
+.time small {
+  color: var(--numbers-color);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.clock ul {
+  list-style: none;
+  padding: 0;
+}
+.clock ul li {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 10px;
+  color: var(--numbers-color);
+}
+.clock ul li:nth-child(1) {
+  right: 22%;
+  top: 6.5%;
+}
+.clock ul li:nth-child(2) {
+  right: 6%;
+  top: 25%;
+}
+.clock ul li:nth-child(3) {
+  right: 1%;
+  top: calc(50% - 10px);
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: bold;
+}
+.clock ul li:nth-child(4) {
+  right: 6%;
+  top: 69%;
+}
+.clock ul li:nth-child(5) {
+  right: 22%;
+  top: 84%;
+}
+.clock ul li:nth-child(6) {
+  right: calc(50% - 10px);
+  top: calc(99% - 20px);
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: bold;
+}
+.clock ul li:nth-child(7) {
+  left: 22%;
+  top: 84%;
+}
+.clock ul li:nth-child(8) {
+  left: 6%;
+  top: 69%;
+}
+.clock ul li:nth-child(9) {
+  left: 1%;
+  top: calc(50% - 10px);
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: bold;
+}
+.clock ul li:nth-child(10) {
+  left: 6%;
+  top: 25%;
+}
+.clock ul li:nth-child(11) {
+  left: 22%;
+  top: 6.5%;
+}
+.clock ul li:nth-child(12) {
+  right: calc(50% - 10px);
+  top: 1%;
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn{
+  width: 500px;
+  height: 100px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+html.dark{
+  --primary-color: #ffffff;
+  --background-color: #4a505c;
+  --numbers-color: #ffffff;
+  --clock-border-color: #424350;
+  --clock-background-color: #000000;
+  -webkit-text-fill-color: #fff;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid #adb5bd;
+  transition: .4s;
+  border-radius: 30px;
+}
+.switch{
+  justify-content: center;
+  text-align: center;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.27em;
+  bottom: 0.25em;
+  background-color: #adb5bd;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ec0000;
+  border: 1px solid #b90808;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ec0303;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.4em);
+  background-color: #fff;
+}
